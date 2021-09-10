@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from library.views import StudentList, StudentDetail
+from library import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/books/list', StudentList.as_view()),
-    path('api/v1/books/details/<int:pk>', StudentDetail.as_view())
+    path('api/v1/student/list', views.ListStudentAPIView.as_view(), name="student_list"),
+    path('api/v1/student/create', views.CreateStudentAPIView.as_view(), name="student_create"),
+    path('api/v1/student/update/<int:pk>', views.UpdateStudentAPIView.as_view(), name="student_update"),
+    path('api/v1/student/delete/<int:pk>', views.DeleteStudentAPIView.as_view(), name="student_delete"),
 ]
