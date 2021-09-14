@@ -19,8 +19,8 @@ from library import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/student/list', views.ListStudentAPIView.as_view(), name="student_list"),
-    path('api/v1/student/create', views.CreateStudentAPIView.as_view(), name="student_create"),
-    path('api/v1/student/update/<int:pk>', views.UpdateStudentAPIView.as_view(), name="student_update"),
-    path('api/v1/student/delete/<int:pk>', views.DeleteStudentAPIView.as_view(), name="student_delete"),
+    path('api/v1/department/list', views.ListDepartmentAPIView.as_view(), name="department_list"),
+    path('api/v1/department/create', views.CreateDepartmentAPIView.as_view(), name="department_create"),
+    path('api/v1/department/update/<int:pk>', views.UpdateDepartmentAPIView.as_view(), name="department_update"),
+    path('api/v1/department/delete/<int:pk>', views.DeleteDepartmentAPIView.as_view(), name="department_delete"),
 ]

@@ -3,31 +3,33 @@ from rest_framework.generics import CreateAPIView
 from rest_framework.generics import DestroyAPIView
 from rest_framework.generics import UpdateAPIView
 
-from library.models import Student
-from django.shortcuts import render
-from library.serializer import StudentSerializer
+from library.models import Departments
+from library.serializer import DepartmentSerializer
+
+
+# List your views here.
+class ListDepartmentAPIView(ListAPIView):
+    """ List all departments """
+    queryset = Departments.objects.all()
+    serializer_class = DepartmentSerializer
 
 
 # Create your views here.
-class ListStudentAPIView(ListAPIView):
-    """" List all """
-    queryset = Student.objects.all()
-    serializer_class = StudentSerializer
+class CreateDepartmentAPIView(CreateAPIView):
+    """ Creations departments """
+    queryset = Departments.objects.all()
+    serializer_class = DepartmentSerializer
 
 
-class CreateStudentAPIView(CreateAPIView):
-    """ Creations """
-    queryset = Student.objects.all()
-    serializer_class = StudentSerializer
+# Update your views here.
+class UpdateDepartmentAPIView(UpdateAPIView):
+    """ Updating departments """
+    queryset = Departments.objects.all()
+    serializer_class = DepartmentSerializer
 
 
-class UpdateStudentAPIView(UpdateAPIView):
-    """ Updating """
-    queryset = Student.objects.all()
-    serializer_class = StudentSerializer
-
-
-class DeleteStudentAPIView(DestroyAPIView):
-    """ Deletion """
-    queryset = Student.objects.all()
-    serializer_class = StudentSerializer
+# Delete your views here.
+class DeleteDepartmentAPIView(DestroyAPIView):
+    """ Deletion departments """
+    queryset = Departments.objects.all()
+    serializer_class = DepartmentSerializer

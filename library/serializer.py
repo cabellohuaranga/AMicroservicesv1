@@ -1,8 +1,16 @@
 from rest_framework import serializers
-from library.models import Student
+from library.models import Employees, Departments
 
 
-class StudentSerializer(serializers.ModelSerializer):
+# Departments
+class DepartmentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Student
+        model = Departments
+        fields = '__all__'
+
+
+# Employees
+class EmployeeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Employees
         fields = '__all__'
